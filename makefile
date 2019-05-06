@@ -1,3 +1,3 @@
 
 all: main.cpp
-	g++ -o Geometry main.cpp
+	g++ -Wall -o Geometry main.cpp

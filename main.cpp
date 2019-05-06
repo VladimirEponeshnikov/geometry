@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
     const char circle[7] = {'c', 'i', 'r', 'c', 'l', 'e'};
-    const char triangle[9] = {'t', 'r', 'i', 'a', 'n', 'g', 'l', 'e'};  
     int count;
     do {
         cout << "Enter number of figures" << endl;
@@ -17,12 +16,16 @@ int main()
     char str[count][9];
 
     for (int i = 0; i < count; i++) {
+	int temp = 0;
         do {
             cout << "Enter name of figure" << endl;
 	    cin.getline(str[i], 9);
-            if ((strcmp(str[i], circle) != 0) and (strcmp(str[i], triangle) != 0))
+	    for (int j = 0; str[i][j] != '('; j++)
+		if (str[i][j + 1] == '(') temp = j;
+	  
+            if (strncmp(str[i], circle, 6) != 0)
                 cout << "Error! Invalid name" << endl; 
-        } while ((strcmp(str[i], circle) != 0) and (strcmp(str[i], triangle) != 0));
+        } while (strcmp(str[i], circle) != 0);
     }
 
     for (int i = 0; i < count; i++) {
