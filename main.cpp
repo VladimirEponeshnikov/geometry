@@ -13,6 +13,7 @@ int main()
         cin >> count;
         if (count < 1) cout << "Error! Try again" << endl;
     } while (count < 1);
+    cin.get();
     char str[count][9];
 
     for (int i = 0; i < count; i++) {
